@@ -1,0 +1,29 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_DEFAULT_REGION: ap-south-1
+    ECR_REPO: membership-app
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION |
+        docker login --username AWS --password-stdin \
+        113350033013.dkr.ecr.ap-south-1.amazonaws.com
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - docker build -t $ECR_REPO:latest .
+
+  post_build:
+    commands:
+      - echo Tagging image...
+      - docker tag $ECR_REPO:latest \
+        113350033013.dkr.ecr.ap-south-1.amazonaws.com/$ECR_REPO:latest
+      - echo Pushing image...
+      - docker push \
+        113350033013.dkr.ecr.ap-south-1.amazonaws.com/$ECR_REPO:latest
+

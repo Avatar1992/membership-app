@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social Care Membership</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    h2 {
+      color: #2e7d32;
+    }
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #2e7d32;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>🤝 Social Care Membership</h2>
+  <p>
+    Join us in supporting <b>handicapped individuals</b> and
+    <b>underprivileged children</b>.
+  </p>
+
+  <form method="POST" action="/submit">
+    <input name="name" placeholder="Full Name" required>
+    <input name="email" placeholder="Email Address" required>
+    <input name="phone" placeholder="Phone Number" required>
+    <button type="submit">Become a Member</button>
+  </form>
+</div>
+
+</body>
+</html>
+
